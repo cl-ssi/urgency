@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="refresh" content="10" />
 
         <title>SSI Urgencias</title>
 
@@ -16,17 +17,14 @@
             .full-height {
                 height: 95vh;
             }
-
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
             }
-
             .position-ref {
                 position: relative;
             }
-
             .content {
                 text-align: center;
             }
@@ -50,26 +48,26 @@
                         @foreach($establishments as $estab)
                         <tr>
                             <td>
-                                {{ $estab->name }} <br>
-                                <small>{{ $estab->address }}</small>
+                                {{ $estab->name }}
+                                <br>
+                                <!--small>{{ $estab->address }}</small-->
+                                <small class="text-muted">Actualizado a las {{ $estab->waitingList->last()->updated_at->format('H:i:s') }}</small>
                             </td>
-                            <td>{{ $estab->waitingList->last()->waiting }}</td>
+                            <td class="pt-3">{{ $estab->waitingList->last()->waiting }}</td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
 
-
             </div>
-
 
         </div>
 
         <footer class="footer">
-        <div class="col-8 col-md-6 d-inline-block text-white"
-            style="background-color: rgb(0,108,183);">Servicio de Salud Iquique</div>
-        <div class="col-4 col-md-6 float-right text-white"
-            style="background-color: rgb(239,65,68);"> © 2019</div>
+            <div class="col-8 col-md-6 d-inline-block text-white"
+                style="background-color: rgb(0,108,183);">Servicio de Salud Iquique</div>
+            <div class="col-4 col-md-6 float-right text-white"
+                style="background-color: rgb(239,65,68);"> © 2019</div>
         </footer>
 
     </body>
