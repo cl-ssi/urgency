@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('establishments', 'EstablishmentController@index');
+Route::get('movil', 'EstablishmentController@movil')->name('movil');
+Route::get('tv', 'EstablishmentController@tv')->name('tv');

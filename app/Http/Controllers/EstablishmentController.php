@@ -7,9 +7,15 @@ use App\Establishment;
 
 class EstablishmentController extends Controller
 {
-    public function index()
+    public function movil()
     {
         $establishments = Establishment::all();
-        return view('index', compact('establishments'));
+        return view('movil', compact('establishments'));
+    }
+
+    public function tv()
+    {
+        $establishments = Establishment::all();
+        return view('tv', compact('establishments'));
     }
 }

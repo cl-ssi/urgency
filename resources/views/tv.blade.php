@@ -17,11 +17,6 @@
             .full-height {
                 height: 95vh;
             }
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
             .position-ref {
                 position: relative;
             }
@@ -31,18 +26,33 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height">
 
             <div class="content">
 
-                <h3>Urgencias</h3>
+                <h1>Urgencias</h1>
 
-                <div class="row">
-                    <div class="col"><a href="{{ route('movil') }}">Móvil</a></div>
-                    <div class="col"><a href="{{ route('tv') }}">Televisor</a></div>
-                </div>
-
-
+                <table class="table table-sm table-bordered h2">
+                    <thead>
+                        <tr>
+                            <th>Establecimiento</th>
+                            <th>Pacientes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($establishments as $estab)
+                        <tr>
+                            <td class="p-3">
+                                {{ $estab->name }}
+                                <br>
+                                <!--small>{{ $estab->address }}</small-->
+                                <small class="text-muted">Actualizado a las {{ $estab->waitingList->last()->updated_at->format('H:i:s') }}</small>
+                            </td>
+                            <td class="pt-3">{{ $estab->waitingList->last()->waiting }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
             </div>
 
