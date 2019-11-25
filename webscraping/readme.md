@@ -27,3 +27,8 @@ pip install selenium
 ```
 pip install request
 ```
+
+# Ejecutar
+```
+python reyno.py
+```
