@@ -2,3 +2,6 @@ user = 'run'
 password = 'pasword'
 driver = '/home/tic/urgency/webscraping/chromedriver_linux64/chromedriver'
 url = 'https://urgencia.saludenred.cl/Authentication/#/authentication'
+webservice = 'http://35.238.154.89/api/waiting_list'
+nodos = [9,7,10,6,11,12,1]
+ids =   [1,2, 3,4, 5, 6,7]
